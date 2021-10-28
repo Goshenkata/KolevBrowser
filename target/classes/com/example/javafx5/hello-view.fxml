@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.web.WebView?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx5.HelloController">
+   <center>
+      <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <BorderPane BorderPane.alignment="CENTER">
+         <center>
+            <TextField fx:id="textField" onAction="#loadPage" prefHeight="25.0" prefWidth="426.0" BorderPane.alignment="CENTER" />
+         </center>
+         <left>
+            <HBox prefHeight="27.0" prefWidth="104.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#forward" text="&lt;" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#back" text="&gt;" />
+                  <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#refreshPage" text="↻" />
+                  <Button layoutX="106.0" layoutY="10.0" mnemonicParsing="false" onAction="#home" text="🏠" />
+               </children>
+            </HBox>
+         </left>
+         <right>
+            <Button mnemonicParsing="false" onAction="#history" prefHeight="25.0" prefWidth="31.0" text="📚" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </top>
+   <left>
+      <BorderPane fx:id="historyPane" prefHeight="373.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+         <center>
+            <ListView fx:id="historyList" prefHeight="373.0" prefWidth="168.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </left>
+</BorderPane>
